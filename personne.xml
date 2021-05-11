@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Personne>
+	<nom>Abid</nom>
+	<age>28</age>
+	<prenom>Jordan</prenom>
+	<adresses>
+		<adresse num="6" rue="rue rougemont">principale</adresse>
+		<adresse num="7" rue="r1ue rougemont">prin1cipale</adresse>
+		<adresse num="36" rue="rue rougemont">principale</adresse>
+		<adresse num="9" rue="rue rougemont">principale</adresse>
+	</adresses>
+
+</Personne>
