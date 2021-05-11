@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-	<persistence-unit name="manga"
+	<persistence-unit name="potagerJPA"
 		transaction-type="RESOURCE_LOCAL">
 		<!-- implementation de JPA -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
@@ -13,7 +13,7 @@
 			<property name="hibernate.connection.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.connection.url"
-				value="jdbc:mysql://localhost:3306/manga?serverTimezone=UTC" />
+				value="jdbc:mysql://localhost:3306/potager?serverTimezone=UTC" />
 			<property name="hibernate.connection.user" value="root" />
 			<property name="hibernate.connection.password"
 				value="" />
