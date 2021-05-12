@@ -1,31 +1,21 @@
 package meteo;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
-@XmlRootElement
+@XmlRootElement(name="level")
 public class level {
 	
-	private String val;
-	@JacksonXmlText
-	private double value;
+	@XmlAttribute(name="val")
+	public String val;
+	@XmlValue
+	public double value;
 	
-	public level() {
-	}
-	public level(String val, double value) {
-		super();
-		this.val = val;
-		this.value = value;
-	}
-	public String getVal() {
-		return val;
-	}
 	public void setVal(String val) {
 		this.val = val;
 	}
-	public double getValue() {
-		return value;
-	}
+	
 	public void setValue(double value) {
 		this.value = value;
 	}

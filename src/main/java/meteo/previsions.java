@@ -2,87 +2,49 @@ package meteo;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-@JsonIgnoreProperties(ignoreUnknown = true)
-@XmlRootElement
+@XmlRootElement(name ="previsions")
 public class previsions {
 	
-	protected int request_state;
-	protected String source;
-	protected String message;
-	protected double request_time;
-	protected String request_key;
-	protected String model_run;
-	protected List<meteo.echeance> echeance;
-	
-	
-	
-	public previsions() {
-	}
-
-	public previsions(int request_state, String source, String message, double request_time, String request_key,
-			String model_run, List<meteo.echeance> echeance) {
-		this.request_state = request_state;
-		this.source = source;
-		this.message = message;
-		this.request_time = request_time;
-		this.request_key = request_key;
-		this.model_run = model_run;
-		this.echeance = echeance;
-	}
-
-	public int getRequest_state() {
-		return request_state;
-	}
+	@XmlElement(name="request_state")
+	public int request_state;
+	@XmlElement(name="source")
+	public String source;
+	@XmlElement(name="message")
+	public String message;
+	@XmlElement(name="request_time")
+	public double request_time;
+	@XmlElement(name="request_key")
+	public String request_key;
+	@XmlElement(name="model_run")
+	public String model_run;
+	@XmlElement(name="echeance")
+	public List<meteo.echeance> echeance;
 
 	public void setRequest_state(int request_state) {
 		this.request_state = request_state;
 	}
-
-	public String getSource() {
-		return source;
-	}
-
+	
 	public void setSource(String source) {
 		this.source = source;
-	}
-
-	public String getMessage() {
-		return message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public double getRequest_time() {
-		return request_time;
-	}
-
 	public void setRequest_time(double request_time) {
 		this.request_time = request_time;
-	}
-
-	public String getRequest_key() {
-		return request_key;
 	}
 
 	public void setRequest_key(String request_key) {
 		this.request_key = request_key;
 	}
 
-	public String getModel_run() {
-		return model_run;
-	}
-
 	public void setModel_run(String model_run) {
 		this.model_run = model_run;
-	}
-
-	public List<echeance> getEcheance() {
-		return echeance;
 	}
 
 	public void setEcheances(List<echeance> echeance) {

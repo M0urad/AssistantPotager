@@ -2,20 +2,14 @@ package meteo;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="humidite")
 public class humidite {
 	
-	private List<meteo.level> level;
-
-	public humidite() {
-	}
-
-	public humidite(List<meteo.level> level) {
-		this.level = level;
-	}
-
-	public List<meteo.level> getLevel() {
-		return level;
-	}
+	@XmlElement(name="level")
+	public List<meteo.level> level;
 
 	public void setLevel(List<meteo.level> level) {
 		this.level = level;
