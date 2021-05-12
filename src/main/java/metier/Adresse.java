@@ -1,12 +1,20 @@
 package metier;
 
+import javax.xml.bind.annotation.XmlAnyAttribute;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlList;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
+import com.sun.xml.txw2.annotation.XmlCDATA;
+import com.sun.xml.txw2.annotation.XmlValue;
 
 
 @XmlRootElement(name = "adresse")
+
 public class Adresse {
 
 	
@@ -14,7 +22,6 @@ public class Adresse {
 	private int num;
 	@XmlElement(name = "rue")
 	private String rue;
-	@JacksonXmlText
 	private String typeAdresse;
 	
 	public Adresse() {
@@ -26,6 +33,7 @@ public class Adresse {
 		super();
 		this.num = num;
 		this.rue = rue;
+		
 		this.typeAdresse = toto;
 	}
 
