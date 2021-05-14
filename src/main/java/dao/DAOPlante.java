@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import plante.Plante;
 import util.Context;
 
 public class DAOPlante implements IDAO<Plante, Integer> {

@@ -2,8 +2,16 @@ package plante;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Plante 
 {  
+	@Id
 	protected String nom;
 	protected String description;
 	protected String typeSol;
@@ -16,7 +24,7 @@ public abstract class Plante
 	protected List<LocalDate> dateRecolte;
 	protected List<LocalDate> datePlantation;
 	
-	
+	public Plante() {}
 	public Plante(String nom) {
 		this.nom = nom;
 	}

@@ -2,6 +2,12 @@ package test;
 
 import java.util.Scanner;
 
+import dao.*;
+import metier.*;
+import plante.*;
+import plante.Plante;
+import util.*;
+
 
 public class App {
 
@@ -49,16 +55,16 @@ public class App {
 		System.out.println("\n---- Création de compte ----");
 		int pres=0;
 		String login;
-		do {
+		//do {
 			login = saisieString("Veuillez choisir un nom d'utilisateur, il vous servira à vous connecter.");
-			for(Compte test : comptes) {
-				if(login.equals(test.getLogin())) {
-					pres=1;
-					System.out.println("Nom d'utilisateur déjà utilisé, veuillez en choisir un autre.");
-				}
-				else pres=0;
-			}
-		}while(pres==1);
+//			for(Compte test : comptes) {
+//				if(login.equals(test.getLogin())) {
+//					pres=1;
+//					System.out.println("Nom d'utilisateur déjà utilisé, veuillez en choisir un autre.");
+//				}
+//				else pres=0;
+//			}
+//		}while(pres==1);
 
 		String password = saisieString("Veuillez saisir un mot de passe.");
 
@@ -66,8 +72,8 @@ public class App {
 
 		String ville = saisieString("Veuillez saisir votre adresse.");
 
-		Comptes user= new Client(login, password, email, ville);
-		comptes.add(user);
+		Compte user= new Compte(login, password, email, ville);
+		//comptes.add(user);
 
 		System.out.println("Bienvenue "+ login + ". Votre compte a bien été créé.");
 
@@ -79,11 +85,11 @@ public class App {
 		String login = saisieString("Saisir votre login");
 		String password = saisieString("Saisir votre password");
 
-		for(Compte test : comptes) {
-			if(login.equals(test.getLogin()) && password.equals(test.getPassword())) {
-				c=test;
-			}
-		}
+//		for(Compte test : comptes) {
+//			if(login.equals(test.getLogin()) && password.equals(test.getPassword())) {
+//				c=test;
+//			}
+//		}
 
 		if(c instanceof Compte)
 		{
@@ -139,11 +145,26 @@ public class App {
 		int choix= saisieInt("");
 		switch(choix) {
 		case 1 : ajoutPlante();break;
-		case 2 : ???();break;
-		case 3 : ???();break;
+		//case 2 : ???();break;
+		//case 3 : ???();break;
 		case 5 : menuPrincipal();break;
 		default : menuPotager();break;
 		}		
+	}
+
+	private static void ajoutPlante() {
+		ajoutTomate();
+		ajoutCourgette();
+	}
+
+private static void ajoutCourgette() {
+	Plante courgette = new Courgettes("Coucou");
+	Context.get_instance().getDaoP().add(courgette);
+	}
+
+private static void ajoutTomate() {
+	Plante tomtom = new Tomates("Tomtom");
+	Context.get_instance().getDaoP().add(tomtom);		
 	}
 
 	private static void menuRecettes() {
@@ -157,8 +178,7 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		menuPrincipal();
 	}
 
 }

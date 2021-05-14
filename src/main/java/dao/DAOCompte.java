@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import metier.Compte;
 import util.Context;
 
 public class DAOCompte implements IDAO<Compte, Integer> {

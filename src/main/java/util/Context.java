@@ -3,11 +3,18 @@ package util;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import dao.DAOCompte;
+import dao.DAOMeteo;
+import dao.DAOPlante;
+
 
 public class Context {
 	
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("eshopModel");
+	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("potagerJPA");
 
+	private DAOPlante daoP = new DAOPlante();
+	private DAOCompte daoC = new DAOCompte();
+	private DAOMeteo daoM = new DAOMeteo();
 	
 	private static Context _instance;
 	
@@ -23,6 +30,24 @@ public class Context {
 		}
 		return _instance;
 	}
+
+
+	public DAOPlante getDaoP() {
+		return daoP;
+	}
+
+
+
+	public DAOCompte getDaoC() {
+		return daoC;
+	}
+
+
+
+	public DAOMeteo getDaoM() {
+		return daoM;
+	}
+
 
 
 	public EntityManagerFactory getEmf() {

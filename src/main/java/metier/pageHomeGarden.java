@@ -19,6 +19,8 @@ import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import javax.swing.ScrollPaneConstants;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
@@ -41,19 +43,32 @@ public class pageHomeGarden {
 		jf.setBounds(400, 20, 450, 700);
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setContentAreaFilled(false);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				jf.setVisible(false);
+				pageMesPlantes.genererPageMesPlantes();
+			}
+		});
+		
+		
 		btnNewButton_1.setBounds(2, 131, 433, 109);
 		btnNewButton_1.setIcon(new ImageIcon(pageHomeGarden.class.getResource("/images/potager400x100.jpg")));
 		
 		JButton btnNewButton_1_1 = new JButton("");
+		btnNewButton_1_1.setContentAreaFilled(false);
 		btnNewButton_1_1.setBounds(2, 263, 433, 109);
 		btnNewButton_1_1.setIcon(new ImageIcon(pageHomeGarden.class.getResource("/images/recettes400x101.jpg")));
 		
 		JButton btnNewButton_1_1_1 = new JButton("");
+		btnNewButton_1_1_1.setContentAreaFilled(false);
 		btnNewButton_1_1_1.setBounds(2, 395, 433, 109);
 		btnNewButton_1_1_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnNewButton_1_1_1.setIcon(new ImageIcon(pageHomeGarden.class.getResource("/images/news400x101jpg.jpg")));
 		
 		JButton btnNewButton_1_1_1_1 = new JButton("");
+		btnNewButton_1_1_1_1.setContentAreaFilled(false);
 		btnNewButton_1_1_1_1.setBounds(2, 527, 433, 109);
 		btnNewButton_1_1_1_1.setAlignmentY(Component.TOP_ALIGNMENT);
 		btnNewButton_1_1_1_1.setIcon(new ImageIcon(pageHomeGarden.class.getResource("/images/arene400x101.jpg")));
@@ -101,6 +116,7 @@ public class pageHomeGarden {
 		jf.getContentPane().add(lblMesPlantes_1);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setBounds(2, -1, 433, 109);
 		btnNewButton.setIcon(new ImageIcon(pageHomeGarden.class.getResource("/images/meteo400x101.jpg")));
 		jf.getContentPane().add(btnNewButton);
