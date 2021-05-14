@@ -2,6 +2,8 @@ package test;
 
 import java.util.Scanner;
 
+import javax.persistence.EntityManager;
+
 import dao.*;
 import metier.*;
 import plante.*;
@@ -164,21 +166,19 @@ private static void ajoutCourgette() {
 
 private static void ajoutTomate() {
 	Plante tomtom = new Tomates("Tomtom");
-	Context.get_instance().getDaoP().add(tomtom);		
+	Context.get_instance().getDaoP().add(tomtom);
 	}
 
-	private static void menuRecettes() {
-		// TODO Auto-generated method stub
-		
+	private static void menuRecettes() {		
 	}
 
 	private static void menuTuto() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public static void main(String[] args) {
+		EntityManager em = Context.get_instance().getEmf().createEntityManager();
+		em.close();
 		menuPrincipal();
+		Context.get_instance().getEmf().close();
 	}
-
 }

@@ -6,9 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+
 public abstract class Plante 
 {  
 	@Id
@@ -21,30 +23,44 @@ public abstract class Plante
 	protected double hauteur;
 	protected double priseAuSol;
 	protected LocalDate dateGermination;
-	protected List<LocalDate> dateRecolte;
-	protected List<LocalDate> datePlantation;
+	
+	protected LocalDate dateRecolteDebut;
+	protected LocalDate dateRecolteFin;
+	
+	protected LocalDate datePlantationDebut;
+	protected LocalDate datePlantationFin;
+
 	
 	public Plante() {}
 	public Plante(String nom) {
 		this.nom = nom;
 	}
 	
-	public List<LocalDate> getDateRecolte() {
-		return dateRecolte;
-	}
 
-	public void setDateRecolte(List<LocalDate> dateRecolte) {
-		this.dateRecolte = dateRecolte;
+	public LocalDate getDateRecolteDebut() {
+		return dateRecolteDebut;
 	}
-
-	public List<LocalDate> getDatePlantation() {
-		return datePlantation;
+	public LocalDate getDateRecolteFin() {
+		return dateRecolteFin;
 	}
-
-	public void setDatePlantation(List<LocalDate> datePlantation) {
-		this.datePlantation = datePlantation;
+	public LocalDate getDatePlantationDebut() {
+		return datePlantationDebut;
 	}
-
+	public LocalDate getDatePlantationFin() {
+		return datePlantationFin;
+	}
+	public void setDateRecolteDebut(LocalDate dateRecolteDebut) {
+		this.dateRecolteDebut = dateRecolteDebut;
+	}
+	public void setDateRecolteFin(LocalDate dateRecolteFin) {
+		this.dateRecolteFin = dateRecolteFin;
+	}
+	public void setDatePlantationDebut(LocalDate datePlantationDebut) {
+		this.datePlantationDebut = datePlantationDebut;
+	}
+	public void setDatePlantationFin(LocalDate datePlantationFin) {
+		this.datePlantationFin = datePlantationFin;
+	}
 	public String getNom() {
 		return nom;
 	}
