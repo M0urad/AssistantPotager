@@ -74,7 +74,7 @@ public class App {
 
 		String ville = saisieString("Veuillez saisir votre adresse.");
 
-		Compte user= new Compte(login, password, email, ville);
+		//Compte user= new Compte(login, password, email, ville);
 		//comptes.add(user);
 
 		System.out.println("Bienvenue "+ login + ". Votre compte a bien été créé.");
