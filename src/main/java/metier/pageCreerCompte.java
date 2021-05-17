@@ -56,7 +56,7 @@ public class pageCreerCompte{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				compte=new Compte(1,textField1.getText(),textField2.getText(),textField4.getText(),textField5.getText(),textField6.getText(),textField3.getText());
+				compte=new Compte(textField1.getText(),textField2.getText(),textField4.getText(),textField5.getText(),textField6.getText(),textField3.getText());
 				//App.comptes.add(compte);
 				pageHomeGarden.genererPageHomeGarden();
 				

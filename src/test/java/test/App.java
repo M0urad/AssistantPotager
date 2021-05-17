@@ -1,5 +1,6 @@
 package test;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import javax.persistence.EntityManager;
@@ -160,13 +161,15 @@ public class App {
 	}
 
 private static void ajoutCourgette() {
-	Plante courgette = new Courgettes("Coucou");
-	Context.get_instance().getDaoP().add(courgette);
+	//Plante courgette = new Courgettes("Coucou");
+	//Context.get_instance().getDaoP().add(courgette);
 	}
 
 private static void ajoutTomate() {
-	Plante tomtom = new Tomates("Tomtom");
-	Context.get_instance().getDaoP().add(tomtom);
+	//Plante tomtom = new Tomates("Tomtom");
+	//Plante tomtom2 = new Tomates("Tomtom", "description", );
+
+	//Context.get_instance().getDaoP().add(tomtom);
 	}
 
 	private static void menuRecettes() {		
@@ -176,9 +179,29 @@ private static void ajoutTomate() {
 	}
 
 	public static void main(String[] args) {
+
+	
+
+		
 		EntityManager em = Context.get_instance().getEmf().createEntityManager();
 		em.close();
-		menuPrincipal();
-		Context.get_instance().getEmf().close();
+		Plante tomtomy = new Tomate();
+		Context.get_instance().getDaoP().delete(tomtomy);
+		Context.get_instance().getDaoP().add(tomtomy);
+		Plante kakarott = new Carotte();
+		Context.get_instance().getDaoP().delete(kakarott);
+		Context.get_instance().getDaoP().add(kakarott);
+
+		
+
+		Compte compte1 = new Compte("user23", "user23", "Paris", "750019","FR","LOL@GMAIL.com");
+		Context.get_instance().getDaoC().add(compte1);
+
+		MaPlante toto = new MaPlante("Toto",LocalDate.parse("2021-05-17"),tomtomy,compte1);
+		Context.get_instance().getDaoMP().add(toto);
+		MaPlante koko = new MaPlante("Kakarott",LocalDate.parse("2021-05-17"),kakarott,compte1);
+		Context.get_instance().getDaoMP().add(koko);
+
+		//menuPrincipal();
 	}
 }

@@ -1,10 +1,15 @@
 package metier;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
+
+import plante.MaPlante;
 
 @Entity
 public class Compte {
@@ -18,12 +23,13 @@ public class Compte {
 	private String CP;
 	private String codePays;	
 	private String email;
+	@OneToMany (mappedBy = "compte")
+	private List<MaPlante> mesPlantes;
 	
 	
 	public Compte() {}
 
-	public Compte(int id, String login, String password, String ville, String cP, String codePays, String email) {
-		this.id = id;
+	public Compte(String login, String password, String ville, String cP, String codePays, String email) {
 		this.login = login;
 		this.password = password;
 		this.ville = ville;

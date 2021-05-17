@@ -17,7 +17,7 @@ public class pageSeConnecter {
 	public static JFrame jf;
 	private static JTextField textField1;
 	private static JTextField textField2;
-	private static Compte user1=new Compte(1,"user1","user1","Versailles","78000","FR","biloute");
+	private static Compte user1=new Compte("user1","user1","Versailles","78000","FR","biloute");
 
 
 	/**

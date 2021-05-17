@@ -2,7 +2,10 @@ package plante;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -10,11 +13,16 @@ import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "Plante")
 
 public abstract class Plante 
 {  
+	
+
 	@Id
-	protected String nom;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	protected int id;
+
 	protected String description;
 	protected String typeSol;
 	protected String type;
@@ -24,6 +32,9 @@ public abstract class Plante
 	protected double priseAuSol;
 	protected LocalDate dateGermination;
 	
+	@OneToMany (mappedBy = "plante")
+	private List<MaPlante> mesPlante;
+
 	protected LocalDate dateRecolteDebut;
 	protected LocalDate dateRecolteFin;
 	
@@ -32,11 +43,38 @@ public abstract class Plante
 
 	
 	public Plante() {}
-	public Plante(String nom) {
-		this.nom = nom;
-	}
+
 	
 
+	public Plante(String description, String typeSol, String type, int dureeGermination, double irrigation,
+			double hauteur, double priseAuSol, LocalDate dateRecolteDebut, LocalDate dateRecolteFin,
+			LocalDate datePlantationDebut, LocalDate datePlantationFin) {
+		this.description = description;
+		this.typeSol = typeSol;
+		this.type = type;
+		this.dureeGermination = dureeGermination;
+		this.irrigation = irrigation;
+		this.hauteur = hauteur;
+		this.priseAuSol = priseAuSol;
+		this.dateRecolteDebut = dateRecolteDebut;
+		this.dateRecolteFin = dateRecolteFin;
+		this.datePlantationDebut = datePlantationDebut;
+		this.datePlantationFin = datePlantationFin;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public List<MaPlante> getMesPlante() {
+		return mesPlante;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setMesPlante(List<MaPlante> mesPlante) {
+		this.mesPlante = mesPlante;
+	}
+	
 	public LocalDate getDateRecolteDebut() {
 		return dateRecolteDebut;
 	}
@@ -61,13 +99,7 @@ public abstract class Plante
 	public void setDatePlantationFin(LocalDate datePlantationFin) {
 		this.datePlantationFin = datePlantationFin;
 	}
-	public String getNom() {
-		return nom;
-	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 
 	public String getDescription() {
 		return description;
@@ -135,7 +167,7 @@ public abstract class Plante
 
 	@Override
 	public String toString() {
-		return "Plante [nom=" + nom + ", description=" + description + ", typeSol=" + typeSol + ", type=" + type
+		return "Plante [description=" + description + ", typeSol=" + typeSol + ", type=" + type
 				+ ", dureeGermination=" + dureeGermination + ", irrigation=" + irrigation + ", hauteur=" + hauteur
 				+ ", priseAuSol=" + priseAuSol + ", dateGermination=" + dateGermination + "]";
 	}
