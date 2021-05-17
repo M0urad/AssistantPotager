@@ -24,6 +24,8 @@ public class Location {
 	public static double[] Url() {
 
 		String ville= "Paris";
+		String cp="78000";
+		String pays="FR";
 		
 		double[] location= {0,0};
 		double lng;
@@ -34,7 +36,7 @@ public class Location {
 		{	
 			//URL url = new URL("http://api.geonames.org/geoCodeAddress?q="+ville+"&username=groupecrazy");
 			//&countryCode=FR => pour rajouter la condition du pays
-			URL url = new URL("http://api.geonames.org/geoCodeAddress?q="+ville+"&countryCode=FR&username=groupecrazy");
+			URL url = new URL("http://api.geonames.org/geoCodeAddress?q="+ville+"&postalcode="+cp+"&countryCode="+pays+"&username=groupecrazy");
 
 			BufferedReader read = new BufferedReader(new InputStreamReader(url.openStream()));
 
