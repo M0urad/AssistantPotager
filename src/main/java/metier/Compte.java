@@ -15,14 +15,20 @@ public class Compte {
 	private String login;
 	private String password;
 	private String ville;
+	private String CP;
+	private String codePays;	
 	private String email;
 	
 	
 	public Compte() {}
-	public Compte(String login, String password, String ville, String email) {
+
+	public Compte(int id, String login, String password, String ville, String cP, String codePays, String email) {
+		this.id = id;
 		this.login = login;
 		this.password = password;
 		this.ville = ville;
+		CP = cP;
+		this.codePays = codePays;
 		this.email = email;
 	}
 
@@ -76,15 +82,30 @@ public class Compte {
 		this.email = email;
 	}
 
+	
+
+	public String getCP() {
+		return CP;
+	}
+
+	public void setCP(String cP) {
+		CP = cP;
+	}
+
+	public String getCodePays() {
+		return codePays;
+	}
+
+	public void setCodePays(String codePays) {
+		this.codePays = codePays;
+	}
 
 	@Override
 	public String toString() {
-		return "Compte [id=" + id + ", login=" + login + ", password=" + password + ", ville=" + ville + ", email="
-				+ email + "]";
+		return "Compte [id=" + id + ", login=" + login + ", password=" + password + ", ville=" + ville + ", CP=" + CP
+				+ ", codePays=" + codePays + ", email=" + email + "]";
 	}
-	
-	
-	
+
 	
 
 }
