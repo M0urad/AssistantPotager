@@ -75,7 +75,7 @@ public class pageHomeGarden {
 		btnNewButton_1_1_1_1.setVerticalAlignment(SwingConstants.TOP);
 		jf.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(""+(int)(meteo.valeurs.a.get(52).value-273.15)+"°");
+		JLabel lblNewLabel = new JLabel(""+(int)(meteo.valeurs.a.get(1).value-273.15)+"°");
 		lblNewLabel.setFont(new Font("Goudy Old Style", Font.BOLD, 30));
 		lblNewLabel.setBounds(353, 131, 73, 39);
 		jf.getContentPane().add(lblNewLabel);
@@ -116,6 +116,12 @@ public class pageHomeGarden {
 		jf.getContentPane().add(lblMesPlantes_1);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jf.setVisible(false);
+				pageMeteo.genererPageMeteo();
+			}
+		});
 		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setBounds(2, -1, 433, 109);
 		btnNewButton.setIcon(new ImageIcon(pageHomeGarden.class.getResource("/images/meteo400x101.jpg")));
