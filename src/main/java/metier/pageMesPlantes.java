@@ -11,6 +11,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.ComponentOrientation;
 
 public class pageMesPlantes {
 
@@ -23,7 +24,7 @@ public class pageMesPlantes {
 	 */
 	public static JFrame genererPageMesPlantes() {
 
-		valeurs.main(null);
+		//valeurs.main(null);
 
 		jf = new JFrame("Thounsand Sunny's Garden");
 		jf.getContentPane().setForeground(Color.PINK);
@@ -41,9 +42,9 @@ public class pageMesPlantes {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
 				pageHomeGarden.genererPageHomeGarden();
-
 			}
 		});
+		
 		btnNewButton.setFont(new Font("Shaka Pow Upright Hollow", Font.PLAIN, 14));
 		btnNewButton.setForeground(Color.RED);
 		btnNewButton.setBounds(10, 26, 89, 23);

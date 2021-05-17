@@ -36,7 +36,7 @@ public class pageHomeGarden {
 	 */
 	public static JFrame genererPageHomeGarden() {
 		
-		valeurs.main(null);
+		//valeurs.main(null);
 
 		jf = new JFrame("Thounsand Sunny's Garden");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
