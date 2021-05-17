@@ -16,6 +16,16 @@ import location.Location;
 public class valeurs {
 	
 	public static List<meteo.level> a=new ArrayList();
+	public static List<meteo.level> nebu=new ArrayList();
+	public static List<meteo.level> humi=new ArrayList();
+	public static List<meteo.level> ventmoy=new ArrayList();
+	public static List<meteo.level> ventraf=new ArrayList();
+	public static List<meteo.level> pression=new ArrayList();
+
+
+
+
+
 
 	public static String inputStreamToString(InputStream is) throws IOException {
 	    StringBuilder sb = new StringBuilder();
@@ -55,6 +65,14 @@ public class valeurs {
 		    for(int i=0; i<64;i++) {
 		    	
 		    	a.add(previsions.echeance.get(i).temperature.level.get(0));
+		    	nebu.add(previsions.echeance.get(i).nebulosite.level.get(3));
+		    	humi.add(previsions.echeance.get(i).humidite.level.get(0));
+		    	ventmoy.add(previsions.echeance.get(i).vent_moyen.level.get(0));
+		    	ventraf.add(previsions.echeance.get(i).vent_rafales.level);
+		    	pression.add(previsions.echeance.get(i).pression.level);
+
+
+
 		    	System.out.println(a.get(i).value-273.15);
 		    }
 		    //System.out.println(a-273.15);
