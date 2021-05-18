@@ -1,4 +1,4 @@
-package test;
+package app;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -201,7 +201,6 @@ private static void ajoutTomate() {
 		System.out.println(plantes);
 		System.out.println(comptes);
 		System.out.println(mesPlantes);
-		compte=comptes.get(1);
 		menus.pageSeConnecter.seConnecter(comptes);
 		//menus.pageHomeGarden.genererPageHomeGarden(compte);
 		

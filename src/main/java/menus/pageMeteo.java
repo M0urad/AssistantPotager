@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import java.awt.BorderLayout;
 import javax.swing.border.TitledBorder;
 
+import app.App;
 import meteo.valeurs;
 import metier.Compte;
 
@@ -30,7 +31,7 @@ public class pageMeteo {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame genererPageMeteo(Compte compte) {
+	public static JFrame genererPageMeteo() {
 	jf = new JFrame("METEO avec Thounsand Sunny's Little Garden");
 	jf.getContentPane().setBackground(new Color(135, 206, 235));
 	jf.getContentPane().setForeground(new Color(30, 144, 255));
@@ -38,7 +39,7 @@ public class pageMeteo {
 	jf.setBounds(400, 20, 450, 700);
 	jf.getContentPane().setLayout(null);
 	
-	valeurs.main(compte);
+	valeurs.main(App.compte);
 
 	
 	JPanel weathereport = new JPanel();
@@ -181,7 +182,7 @@ public class pageMeteo {
 	btnNewButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			jf.setVisible(false);
-			pageHomeGarden.genererPageHomeGarden(compte);
+			pageHomeGarden.genererPageHomeGarden();
 		}
 	});
 	btnNewButton.setBounds(10, 20, 89, 23);

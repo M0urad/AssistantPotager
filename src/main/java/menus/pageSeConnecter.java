@@ -58,8 +58,8 @@ public class pageSeConnecter {
 						connexion=true;
 						jf.setVisible(false);
 						//App.compte=Context.get_instance().getDaoC().findByLogin(compteTmp.getLogin());
-						Compte compte=Context.get_instance().getDaoC().findById(compteTmp.getId());
-						pageHomeGarden.genererPageHomeGarden(compte);
+						App.compte=Context.get_instance().getDaoC().findById(compteTmp.getId());
+						pageHomeGarden.genererPageHomeGarden();
 					}
 
 				}

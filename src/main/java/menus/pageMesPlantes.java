@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import meteo.valeurs;
 import metier.Compte;
+import util.Context;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -19,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.border.TitledBorder;
 
+import app.App;
+
 public class pageMesPlantes {
 
 	private static JFrame jf;
@@ -28,9 +31,9 @@ public class pageMesPlantes {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame genererPageMesPlantes(Compte compte) {
+	public static JFrame genererPageMesPlantes() {
 
-		valeurs.main(compte);
+		valeurs.main(App.compte);
 
 		jf = new JFrame("Mes Plantes avec Thousand Sunny's Little Garden");
 		jf.getContentPane().setLayout(null);
@@ -46,7 +49,7 @@ public class pageMesPlantes {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				pageHomeGarden.genererPageHomeGarden(compte);
+				pageHomeGarden.genererPageHomeGarden();
 			}
 		});
 		
@@ -70,7 +73,7 @@ public class pageMesPlantes {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				pageAjouterPlante.ajouterPlante(compte);
+				pageAjouterPlante.ajouterPlante();
 			}
 		});
 		btnNewButton_1.setContentAreaFilled(false);
@@ -94,12 +97,12 @@ public class pageMesPlantes {
 		lblNewLabel_2.setBounds(10, 53, 83, 14);
 		Statsg.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(121, 26, 63, 14);
+		JLabel lblNewLabel_3 = new JLabel(""+ (Context.get_instance().getDaoMP().findAllByUser(App.compte.getId())).size());
+		lblNewLabel_3.setBounds(143, 26, 63, 14);
 		Statsg.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(121, 53, 63, 14);
+		JLabel lblNewLabel_4 = new JLabel(""+ (Context.get_instance().getDaoMP().findAllSpeciesByUser(App.compte.getId())).size());
+		lblNewLabel_4.setBounds(143, 53, 63, 14);
 		Statsg.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Total plantations");
@@ -107,15 +110,15 @@ public class pageMesPlantes {
 		Statsg.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Plants \u00E9chou\u00E9s");
-		lblNewLabel_6.setBounds(10, 103, 83, 14);
+		lblNewLabel_6.setBounds(10, 103, 123, 14);
 		Statsg.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("New label");
-		lblNewLabel_4_1.setBounds(121, 78, 63, 14);
+		JLabel lblNewLabel_4_1 = new JLabel(""+ (Context.get_instance().getDaoMP().findAllByUser(App.compte.getId())).size());
+		lblNewLabel_4_1.setBounds(143, 78, 63, 14);
 		Statsg.add(lblNewLabel_4_1);
 		
-		JLabel lblNewLabel_4_2 = new JLabel("New label");
-		lblNewLabel_4_2.setBounds(121, 103, 63, 14);
+		JLabel lblNewLabel_4_2 = new JLabel("A venir");
+		lblNewLabel_4_2.setBounds(143, 103, 63, 14);
 		Statsg.add(lblNewLabel_4_2);
 		
 		JPanel ConsulterPlantes = new JPanel();

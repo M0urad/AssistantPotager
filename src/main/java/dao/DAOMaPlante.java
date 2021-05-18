@@ -51,7 +51,7 @@ public class DAOMaPlante implements IDAO<MaPlante, Integer> {
 	@Override
 	public List<MaPlante> findAllSpeciesByUser(int id) {
 		EntityManager em = Context.get_instance().getEmf().createEntityManager();
-		Query myQuery = em.createQuery("SELECT distinct plante_id from MaPlante where compte_id ="+id ,MaPlante.class);
+		Query myQuery = em.createQuery("SELECT distinct plante_id from MaPlante plante_id where compte_id ="+id ,MaPlante.class);
 		List<MaPlante> plantes=myQuery.getResultList();
 		em.close();
 		return plantes;

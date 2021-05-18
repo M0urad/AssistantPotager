@@ -62,7 +62,7 @@ public class pageCreerCompte{
 				jf.setVisible(false);
 				compte=new Compte(textField1.getText(),textField2.getText(),textField4.getText(),textField5.getText(),textField6.getText(),textField3.getText());
 				App.compte=Context.get_instance().getDaoC().save(compte);
-				pageHomeGarden.genererPageHomeGarden(compte);
+				pageHomeGarden.genererPageHomeGarden();
 				
 			}
 		});

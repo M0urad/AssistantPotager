@@ -19,6 +19,8 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.border.TitledBorder;
 
+import app.App;
+
 public class pageMesPlantes {
 
 	private static JFrame jf;
@@ -28,9 +30,9 @@ public class pageMesPlantes {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame genererPageMesPlantes(Compte compte) {
+	public static JFrame genererPageMesPlantes() {
 
-		valeurs.main(null);
+		valeurs.main(App.compte);
 
 		jf = new JFrame("Mes Plantes avec Thousand Sunny's Little Garden");
 		jf.getContentPane().setLayout(null);
@@ -92,7 +94,7 @@ public class pageMesPlantes {
 		lblNewLabel_3.setBounds(121, 26, 63, 14);
 		Statsg.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel(""+Context.get_instance().getDaoMP().findAllSpeciesByUser(compte.getId()));
+		JLabel lblNewLabel_4 = new JLabel(""+Context.get_instance().getDaoMP().findAllSpeciesByUser(App.compte.getId()));
 		lblNewLabel_4.setBounds(121, 53, 63, 14);
 		Statsg.add(lblNewLabel_4);
 		
@@ -106,7 +108,7 @@ public class pageMesPlantes {
 		lblNewLabel_6.setBounds(10, 103, 83, 14);
 		Statsg.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_4_1 = new JLabel(""+Context.get_instance().getDaoMP().findAllByUser(compte.getId()));
+		JLabel lblNewLabel_4_1 = new JLabel(""+Context.get_instance().getDaoMP().findAllByUser(App.compte.getId()));
 		lblNewLabel_4_1.setBounds(121, 78, 63, 14);
 		Statsg.add(lblNewLabel_4_1);
 		

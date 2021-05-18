@@ -52,7 +52,7 @@ public class pageAjouterPlante {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame ajouterPlante(Compte compte) {
+	public static JFrame ajouterPlante() {
 
 
 		jf = new JFrame("Thousand Sunny's Little Garden");
@@ -67,7 +67,7 @@ public class pageAjouterPlante {
 				if(tmp[0]==1) {
 					for(int i=0; i<Integer.parseInt(textField.getText()); i++) {
 						Basilic basilic=new Basilic();
-						MaPlante basil = new MaPlante("basil"+(i+1),null,basilic,compte);
+						MaPlante basil = new MaPlante("basil"+(i+1),null,basilic,App.compte);
 						Context.get_instance().getDaoMP().add(basil);
 						App.mesPlantes.add(basil);
 					}
@@ -81,7 +81,7 @@ public class pageAjouterPlante {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				pageMesPlantes.genererPageMesPlantes(compte);
+				pageMesPlantes.genererPageMesPlantes();
 			}
 		});
 		btnNewButton_1.setBounds(0, 10, 85, 21);
@@ -421,7 +421,7 @@ public class pageAjouterPlante {
 		lblImages.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImages.setForeground(new Color(255, 255, 255));
 		lblImages.setFont(new Font("Goudy Old Style", Font.BOLD, 24));
-		lblImages.setIcon(new ImageIcon(pageCreerCompte.class.getResource("/images/MesPlantes450x700.png")));
+		lblImages.setIcon(new ImageIcon(pageAjouterPlante.class.getResource("/images/MesPlantes450x700.png")));
 		lblImages.setBounds(0, 0, 436, 664);
 		jf.getContentPane().add(lblImages);
 

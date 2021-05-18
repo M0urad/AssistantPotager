@@ -5,7 +5,6 @@ import javax.persistence.Persistence;
 
 import dao.DAOCompte;
 import dao.DAOMaPlante;
-import dao.DAOMeteo;
 import dao.DAOPlante;
 
 
@@ -15,7 +14,6 @@ public class Context {
 
 	private DAOPlante daoP = new DAOPlante();
 	private DAOCompte daoC = new DAOCompte();
-	private DAOMeteo daoM = new DAOMeteo();
 	private DAOMaPlante daoMP = new DAOMaPlante();
 
 	
@@ -47,9 +45,6 @@ public class Context {
 
 
 
-	public DAOMeteo getDaoM() {
-		return daoM;
-	}
 	
 	
 	public DAOMaPlante getDaoMP() {

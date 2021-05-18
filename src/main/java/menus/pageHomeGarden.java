@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import app.App;
 import meteo.valeurs;
 import metier.Compte;
 
@@ -35,11 +36,11 @@ public class pageHomeGarden {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame genererPageHomeGarden(Compte compte) {
+	public static JFrame genererPageHomeGarden() {
 		
-		valeurs.main(compte);
+		valeurs.main(App.compte);
 
-		jf = new JFrame("Thounsand Sunny's Garden");
+		jf = new JFrame("Thousand Sunny's Garden");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setBounds(400, 20, 450, 700);
 		
@@ -47,9 +48,8 @@ public class pageHomeGarden {
 		btnNewButton_1.setContentAreaFilled(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				jf.setVisible(false);
-				pageMesPlantes.genererPageMesPlantes(compte);
+				pageMesPlantes.genererPageMesPlantes();
 			}
 		});
 		
@@ -121,7 +121,7 @@ public class pageHomeGarden {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				pageMeteo.genererPageMeteo(compte);
+				pageMeteo.genererPageMeteo();
 			}
 		});
 		btnNewButton.setContentAreaFilled(false);
