@@ -1,4 +1,4 @@
-package app;
+package test;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class App {
 	public static List<Plante> plantes=new ArrayList();
 	public static List<Compte> comptes=new ArrayList();
 	public static List<MaPlante> mesPlantes=new ArrayList();
-	public static Compte compte;
+	public static Compte compte=new Compte();
 
 	
 	public static String saisieString(String msg) 
@@ -49,6 +49,7 @@ public class App {
 		plantes=Context.get_instance().getDaoP().findAll();
 		comptes=Context.get_instance().getDaoC().findAll();
 		mesPlantes=Context.get_instance().getDaoMP().findAll();
+	
 	}
 	
 	
@@ -196,7 +197,13 @@ private static void ajoutTomate() {
 	public static void main(String[] args) {
 
 	
-
+		init();
+		System.out.println(plantes);
+		System.out.println(comptes);
+		System.out.println(mesPlantes);
+		compte=comptes.get(1);
+		menus.pageSeConnecter.seConnecter(comptes);
+		//menus.pageHomeGarden.genererPageHomeGarden(compte);
 		
 		EntityManager em = Context.get_instance().getEmf().createEntityManager();
 		em.close();
@@ -208,19 +215,19 @@ private static void ajoutTomate() {
 //		Context.get_instance().getDaoP().delete(kakarott);
 //		Context.get_instance().getDaoP().add(kakarott);
 		
-		
-		Tomate tomtomy=new Tomate();
-		Context.get_instance().getDaoP().add(tomtomy);
-		Plante kakarott = new Carotte();
-		Context.get_instance().getDaoP().add(kakarott);
-
-		Compte compte1 = new Compte("user23", "user23", "Paris", "750019","FR","LOL@GMAIL.com");
-		Context.get_instance().getDaoC().add(compte1);
-
-		MaPlante toto = new MaPlante("Toto",LocalDate.parse("2021-05-17"),tomtomy,compte1);
-		Context.get_instance().getDaoMP().add(toto);
-		MaPlante koko = new MaPlante("Kakarott",LocalDate.parse("2021-05-17"),kakarott,compte1);
-		Context.get_instance().getDaoMP().add(koko);
+//		
+//		Tomate tomtomy=new Tomate();
+//		Context.get_instance().getDaoP().add(tomtomy);
+//		Plante kakarott = new Carotte();
+//		Context.get_instance().getDaoP().add(kakarott);
+//
+//		Compte compte1 = new Compte("user23", "user23", "Paris", "750019","FR","LOL@GMAIL.com");
+//		Context.get_instance().getDaoC().add(compte1);
+//
+//		MaPlante toto = new MaPlante("Toto",LocalDate.parse("2021-05-17"),tomtomy,compte1);
+//		Context.get_instance().getDaoMP().add(toto);
+//		MaPlante koko = new MaPlante("Kakarott",LocalDate.parse("2021-05-17"),kakarott,compte1);
+//		Context.get_instance().getDaoMP().add(koko);
 
 		//menuPrincipal();
 	}

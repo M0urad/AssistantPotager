@@ -30,7 +30,7 @@ public class pageMesPlantes {
 	 */
 	public static JFrame genererPageMesPlantes(Compte compte) {
 
-		valeurs.main(null);
+		valeurs.main(compte);
 
 		jf = new JFrame("Mes Plantes avec Thousand Sunny's Little Garden");
 		jf.getContentPane().setLayout(null);

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,15 +23,16 @@ public class pageSeConnecter {
 	public static JFrame jf;
 	public static JTextField textField1;
 	public static JPasswordField passwordField;
+	public static boolean connexion=false;
 	//	private static Compte user1=new Compte("user1","user1","Versailles","78000","FR","biloute");
 
 
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame seConnecter() {
+	public static JFrame seConnecter(List<Compte> comptes) {
 
-
+		
 
 		jf = new JFrame("Thounsand Sunny's Little Garden");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,23 +52,25 @@ public class pageSeConnecter {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Ca plante la");
-				for (Compte compteTmp : App.comptes) {
-					System.out.println("Ca plante toto");
+				for (Compte compteTmp : comptes) {
+					
 					if(textField1.getText().equalsIgnoreCase(compteTmp.getLogin()) || passwordField.getPassword().toString().equalsIgnoreCase(compteTmp.getPassword())) {
-						System.out.println("Ca plante ici");
+						connexion=true;
 						jf.setVisible(false);
 						//App.compte=Context.get_instance().getDaoC().findByLogin(compteTmp.getLogin());
-						App.compte=Context.get_instance().getDaoC().findById(compteTmp.getId());
-						pageHomeGarden.genererPageHomeGarden(compteTmp);
+						Compte compte=Context.get_instance().getDaoC().findById(compteTmp.getId());
+						pageHomeGarden.genererPageHomeGarden(compte);
 					}
 
-					else {
-						System.out.println("Ca plante ou la");
-						jf.setVisible(false);
-						pageCreerCompte.creerCompte();
-					}
 				}
+				
+				if(connexion==false) {
+					jf.setVisible(false);
+					pageCreerCompte.creerCompte();
+				}
+				
 			}
+			
 		});
 		btnNewButton.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnNewButton.setIconTextGap(3);
@@ -115,6 +119,5 @@ public class pageSeConnecter {
 	}
 
 	public static void main(String[] args) {
-		seConnecter();
 	}
 }

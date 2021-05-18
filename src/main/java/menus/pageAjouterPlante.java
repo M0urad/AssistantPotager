@@ -47,6 +47,7 @@ public class pageAjouterPlante {
 	private static JTextField textField_11;
 	private static JTextField textField_12;
 	private static JTextField textField_13;
+	private static int[] tmp= {0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -60,6 +61,31 @@ public class pageAjouterPlante {
 		jf.getContentPane().setLayout(null);
 
 		JButton btnNewButton = new JButton("Ajouter \u00E0 mes plantes");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				if(tmp[0]==1) {
+					for(int i=0; i<Integer.parseInt(textField.getText()); i++) {
+						Basilic basilic=new Basilic();
+						MaPlante basil = new MaPlante("basil"+(i+1),null,basilic,compte);
+						Context.get_instance().getDaoMP().add(basil);
+						App.mesPlantes.add(basil);
+					}
+				}
+
+
+			}
+		});
+
+		JButton btnNewButton_1 = new JButton("Retour");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jf.setVisible(false);
+				pageMesPlantes.genererPageMesPlantes(compte);
+			}
+		});
+		btnNewButton_1.setBounds(0, 10, 85, 21);
+		jf.getContentPane().add(btnNewButton_1);
 		btnNewButton.setFont(new Font("Goudy Old Style", Font.BOLD, 30));
 		btnNewButton.setForeground(new Color(47, 79, 79));
 		btnNewButton.setBounds(20, 565, 400, 40);
@@ -90,12 +116,14 @@ public class pageAjouterPlante {
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				for(int i=0; i<Integer.parseInt(textField.getText()); i++) {
-					Basilic basilic=new Basilic();
-					MaPlante basil = new MaPlante(null,null,basilic,compte);
-					Context.get_instance().getDaoMP().add(basil);
-					App.mesPlantes.add(basil);
-				}
+				tmp[0]=1;
+
+				//				for(int i=0; i<Integer.parseInt(textField.getText()); i++) {
+				//					Basilic basilic=new Basilic();
+				//					MaPlante basil = new MaPlante(null,null,basilic,compte);
+				//					Context.get_instance().getDaoMP().add(basil);
+				//					App.mesPlantes.add(basil);
+				//				}
 
 			}
 		});
