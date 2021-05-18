@@ -45,16 +45,12 @@ public class pageAjouterPlante {
 	private static JTextField textField_11;
 	private static JTextField textField_12;
 	private static JTextField textField_13;
-	private static int[] tmp= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-	//private static String[] tmp= {"0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"};
-	private static int[] alfred= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-	//private static String[] alfred= {"0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"};
 	private static JTextField textField_14;
 
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame ajouterPlante(Compte compte) {
+	public static JFrame ajouterPlante() {
 		
 		
 
@@ -71,7 +67,7 @@ public class pageAjouterPlante {
 				if(!textField.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField.getText()); i++) {
 						Plante basilic=Context.get_instance().getDaoP().findById(1);
-						MaPlante basil = new MaPlante("basil"+(i+1),null,basilic,compte);
+						MaPlante basil = new MaPlante("basil"+(i+1),null,basilic,App.compte);
 						Context.get_instance().getDaoMP().save(basil);
 						App.mesPlantes.add(basil);
 					}
@@ -79,7 +75,7 @@ public class pageAjouterPlante {
 				if(!textField_1.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_1.getText()); i++) {
 						Plante blette=Context.get_instance().getDaoP().findById(2);
-						MaPlante blet = new MaPlante("blette"+(i+1),null,blette,compte);
+						MaPlante blet = new MaPlante("blette"+(i+1),null,blette,App.compte);
 						Context.get_instance().getDaoMP().save(blet);
 						App.mesPlantes.add(blet);
 					}
@@ -87,7 +83,7 @@ public class pageAjouterPlante {
 				if(!textField_2.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_2.getText()); i++) {
 						Plante carotte=Context.get_instance().getDaoP().findById(3);
-						MaPlante karot = new MaPlante("karot"+(i+1),null,carotte,compte);
+						MaPlante karot = new MaPlante("karot"+(i+1),null,carotte,App.compte);
 						Context.get_instance().getDaoMP().save(karot);
 						App.mesPlantes.add(karot);
 					}
@@ -95,7 +91,7 @@ public class pageAjouterPlante {
 				if(!textField_14.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_14.getText()); i++) {
 						Plante coriandre=Context.get_instance().getDaoP().findById(4);
-						MaPlante korian = new MaPlante("korian"+(i+1),null,coriandre,compte);
+						MaPlante korian = new MaPlante("korian"+(i+1),null,coriandre,App.compte);
 						Context.get_instance().getDaoMP().save(korian);
 						App.mesPlantes.add(korian);
 					}
@@ -103,7 +99,7 @@ public class pageAjouterPlante {
 				if(!textField_3.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_3.getText()); i++) {
 						Plante courgette=Context.get_instance().getDaoP().findById(5);
-						MaPlante coucou = new MaPlante("coucou"+(i+1),null,courgette,compte);
+						MaPlante coucou = new MaPlante("coucou"+(i+1),null,courgette,App.compte);
 						Context.get_instance().getDaoMP().save(coucou);
 						App.mesPlantes.add(coucou);
 					}
@@ -111,7 +107,7 @@ public class pageAjouterPlante {
 				if(!textField_4.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_4.getText()); i++) {
 						Plante menthe=Context.get_instance().getDaoP().findById(6);
-						MaPlante mint = new MaPlante("mint"+(i+1),null,menthe,compte);
+						MaPlante mint = new MaPlante("mint"+(i+1),null,menthe,App.compte);
 						Context.get_instance().getDaoMP().save(mint);
 						App.mesPlantes.add(mint);
 					}
@@ -119,7 +115,7 @@ public class pageAjouterPlante {
 				if(!textField_5.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_5.getText()); i++) {
 						Plante pasteque=Context.get_instance().getDaoP().findById(7);
-						MaPlante lolo = new MaPlante("lolo"+(i+1),null,pasteque,compte);
+						MaPlante lolo = new MaPlante("lolo"+(i+1),null,pasteque,App.compte);
 						Context.get_instance().getDaoMP().save(lolo);
 						App.mesPlantes.add(lolo);
 					}
@@ -127,7 +123,7 @@ public class pageAjouterPlante {
 				if(!textField_6.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_6.getText()); i++) {
 						Plante persil=Context.get_instance().getDaoP().findById(8);
-						MaPlante persy = new MaPlante("persy"+(i+1),null,persil,compte);
+						MaPlante persy = new MaPlante("persy"+(i+1),null,persil,App.compte);
 						Context.get_instance().getDaoMP().save(persy);
 						App.mesPlantes.add(persy);
 					}
@@ -135,7 +131,7 @@ public class pageAjouterPlante {
 				if(!textField_7.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_7.getText()); i++) {
 						Plante poireau=Context.get_instance().getDaoP().findById(9);
-						MaPlante hercule = new MaPlante("hercule"+(i+1),null,poireau,compte);
+						MaPlante hercule = new MaPlante("hercule"+(i+1),null,poireau,App.compte);
 						Context.get_instance().getDaoMP().save(hercule);
 						App.mesPlantes.add(hercule);
 					}
@@ -143,7 +139,7 @@ public class pageAjouterPlante {
 				if(!textField_8.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_8.getText()); i++) {
 						Plante poivron=Context.get_instance().getDaoP().findById(10);
-						MaPlante poivro = new MaPlante("poivro"+(i+1),null,poivron,compte);
+						MaPlante poivro = new MaPlante("poivro"+(i+1),null,poivron,App.compte);
 						Context.get_instance().getDaoMP().save(poivro);
 						App.mesPlantes.add(poivro);
 					}
@@ -151,7 +147,7 @@ public class pageAjouterPlante {
 				if(!textField_9.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_9.getText()); i++) {
 						Plante patate=Context.get_instance().getDaoP().findById(11);
-						MaPlante frite = new MaPlante("poivro"+(i+1),null,patate,compte);
+						MaPlante frite = new MaPlante("poivro"+(i+1),null,patate,App.compte);
 						Context.get_instance().getDaoMP().save(frite);
 						App.mesPlantes.add(frite);
 					}
@@ -159,7 +155,7 @@ public class pageAjouterPlante {
 				if(!textField_10.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_10.getText()); i++) {
 						Plante potiron=Context.get_instance().getDaoP().findById(12);
-						MaPlante potiti = new MaPlante("potiti"+(i+1),null,potiron,compte);
+						MaPlante potiti = new MaPlante("potiti"+(i+1),null,potiron,App.compte);
 						Context.get_instance().getDaoMP().save(potiti);
 						App.mesPlantes.add(potiti);
 					}
@@ -167,7 +163,7 @@ public class pageAjouterPlante {
 				if(!textField_11.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_11.getText()); i++) {
 						Plante radis=Context.get_instance().getDaoP().findById(13);
-						MaPlante radin = new MaPlante("radin"+(i+1),null,radis,compte);
+						MaPlante radin = new MaPlante("radin"+(i+1),null,radis,App.compte);
 						Context.get_instance().getDaoMP().save(radin);
 						App.mesPlantes.add(radin);
 					}
@@ -175,7 +171,7 @@ public class pageAjouterPlante {
 				if(!textField_12.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_12.getText()); i++) {
 						Plante salade=Context.get_instance().getDaoP().findById(14);
-						MaPlante mytho = new MaPlante("mytho"+(i+1),null,salade,compte);
+						MaPlante mytho = new MaPlante("mytho"+(i+1),null,salade,App.compte);
 						Context.get_instance().getDaoMP().save(mytho);
 						App.mesPlantes.add(mytho);
 					}
@@ -183,7 +179,7 @@ public class pageAjouterPlante {
 				if(!textField_13.getText().equals("")) {
 					for(int i=0; i<Integer.parseInt(textField_13.getText()); i++) {
 						Plante tomate=Context.get_instance().getDaoP().findById(15);
-						MaPlante ketchup = new MaPlante("ketchup"+(i+1),null,tomate,compte);
+						MaPlante ketchup = new MaPlante("ketchup"+(i+1),null,tomate,App.compte);
 						Context.get_instance().getDaoMP().save(ketchup);
 						App.mesPlantes.add(ketchup);
 					}
@@ -198,7 +194,7 @@ public class pageAjouterPlante {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				pageMesPlantes.genererPageMesPlantes(compte);
+				pageMesPlantes.genererPageMesPlantes();
 			}
 		});
 		btnNewButton_1.setBounds(0, 10, 85, 21);

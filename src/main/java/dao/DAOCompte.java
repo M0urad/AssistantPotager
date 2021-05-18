@@ -91,10 +91,7 @@ public class DAOCompte implements IDAO<Compte, Integer> {
 	}
 
 
-	@Override
-	public List<MaPlante> findAllSpeciesByUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+
 
 }

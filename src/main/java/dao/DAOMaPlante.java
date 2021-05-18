@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import metier.Compte;
 import plante.MaPlante;
+import plante.Plante;
 import util.Context;
 
 public class DAOMaPlante implements IDAO<MaPlante, Integer> {
@@ -48,10 +49,12 @@ public class DAOMaPlante implements IDAO<MaPlante, Integer> {
 		return plantes;
 	}
 	
-	@Override
+	
 	public List<MaPlante> findAllSpeciesByUser(int id) {
 		EntityManager em = Context.get_instance().getEmf().createEntityManager();
-		Query myQuery = em.createQuery("SELECT distinct plante_id from MaPlante plante_id where compte_id ="+id ,MaPlante.class);
+		Query myQuery = em.createQuery("SELECT distinct p from MaPlante mp join mp.plante p join mp.compte c where c.id=:id " ,Plante.class);
+		myQuery.setParameter("id", id);
+		//Query myQuery = em.createQuery("SELECT distinct plante_id from MaPlante plante_id where compte_id ="+id ,MaPlante.class);
 		List<MaPlante> plantes=myQuery.getResultList();
 		em.close();
 		return plantes;

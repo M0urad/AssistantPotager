@@ -14,6 +14,5 @@ public interface IDAO<T,K> {
 		public List<T> saveAll(List<T> entity);
 		void add(T entity);
 		List<MaPlante> findAllByUser(int id);
-		List<MaPlante> findAllSpeciesByUser(int id); 
 
 }

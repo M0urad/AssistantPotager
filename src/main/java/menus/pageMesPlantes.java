@@ -127,6 +127,7 @@ public class pageMesPlantes {
 		ConsulterPlantes.setLayout(null);
 		
 		JLabel lblNewLabel_7 = new JLabel("CONSULTER MES PLANTES");
+		
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7.setForeground(new Color(255, 222, 173));
 		lblNewLabel_7.setFont(new Font("Goudy Old Style", Font.BOLD, 25));
@@ -134,6 +135,12 @@ public class pageMesPlantes {
 		ConsulterPlantes.add(lblNewLabel_7);
 		
 		JButton btnNewButton_2 = new JButton("CONSULTER MON POTAGER");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jf.setVisible(false);
+				pageConsulterMesPlantes.genererPageConsulterMesPlantes();
+			}
+		});
 		btnNewButton_2.setContentAreaFilled(false);
 		btnNewButton_2.setBounds(10, 0, 365, 200);
 		btnNewButton_2.setIcon(new ImageIcon(pageMeteo.class.getResource("/images/consulterpotage375x234.jpg")));
