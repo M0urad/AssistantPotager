@@ -55,7 +55,7 @@ public class pageAjouterPlante {
 	public static JFrame ajouterPlante(Compte compte) {
 
 
-		jf = new JFrame("Thounsand Sunny's Little Garden");
+		jf = new JFrame("Thousand Sunny's Little Garden");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setBounds(400, 20, 450, 700);
 		jf.getContentPane().setLayout(null);

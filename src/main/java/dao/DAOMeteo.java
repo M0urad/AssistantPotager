@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import org.hibernate.boot.model.source.spi.EmbeddableSource;
 
+import plante.MaPlante;
 import util.Context;
 
 public class DAOMeteo implements IDAO<Meteo,Integer> {
@@ -73,6 +74,18 @@ public class DAOMeteo implements IDAO<Meteo,Integer> {
 		em.getTransaction().commit();
 		em.close();
 		
+	}
+
+	@Override
+	public List<MaPlante> findAllByUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MaPlante> findAllSpeciesByUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

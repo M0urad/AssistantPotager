@@ -3,6 +3,8 @@ package metier;
 import javax.swing.JFrame;
 
 import meteo.valeurs;
+import util.Context;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
@@ -26,7 +28,7 @@ public class pageMesPlantes {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public static JFrame genererPageMesPlantes() {
+	public static JFrame genererPageMesPlantes(Compte compte) {
 
 		valeurs.main(null);
 
@@ -86,13 +88,15 @@ public class pageMesPlantes {
 		lblNewLabel_2.setBounds(10, 53, 83, 14);
 		Statsg.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
+		JLabel lblNewLabel_3 = new JLabel();
 		lblNewLabel_3.setBounds(121, 26, 63, 14);
 		Statsg.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
+		JLabel lblNewLabel_4 = new JLabel(""+Context.get_instance().getDaoMP().findAllSpeciesByUser(compte.getId()));
 		lblNewLabel_4.setBounds(121, 53, 63, 14);
 		Statsg.add(lblNewLabel_4);
+		
+		
 		
 		JLabel lblNewLabel_5 = new JLabel("Total plantations");
 		lblNewLabel_5.setBounds(10, 78, 83, 14);
@@ -102,7 +106,7 @@ public class pageMesPlantes {
 		lblNewLabel_6.setBounds(10, 103, 83, 14);
 		Statsg.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("New label");
+		JLabel lblNewLabel_4_1 = new JLabel(""+Context.get_instance().getDaoMP().findAllByUser(compte.getId()));
 		lblNewLabel_4_1.setBounds(121, 78, 63, 14);
 		Statsg.add(lblNewLabel_4_1);
 		

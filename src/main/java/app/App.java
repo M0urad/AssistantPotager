@@ -58,7 +58,7 @@ public class App {
 		System.out.println("---- Bienvenue sur votre Assistant Potager ----");
 		System.out.println("Faire un choix :");
 		System.out.println("1 - Se connecter");
-		System.out.println("2 - Créer un compte");
+		System.out.println("2 - Crï¿½er un compte");
 		System.out.println("3 - Exit");
 
 		int choix= saisieInt("");
@@ -71,15 +71,15 @@ public class App {
 	}
 
 	private static void creerCompte() {
-		System.out.println("\n---- Création de compte ----");
+		System.out.println("\n---- Crï¿½ation de compte ----");
 		int pres=0;
 		String login;
 		//do {
-			login = saisieString("Veuillez choisir un nom d'utilisateur, il vous servira à vous connecter.");
+			login = saisieString("Veuillez choisir un nom d'utilisateur, il vous servira ï¿½ vous connecter.");
 //			for(Compte test : comptes) {
 //				if(login.equals(test.getLogin())) {
 //					pres=1;
-//					System.out.println("Nom d'utilisateur déjà utilisé, veuillez en choisir un autre.");
+//					System.out.println("Nom d'utilisateur dï¿½jï¿½ utilisï¿½, veuillez en choisir un autre.");
 //				}
 //				else pres=0;
 //			}
@@ -94,7 +94,7 @@ public class App {
 		//Compte user= new Compte(login, password, email, ville);
 		//comptes.add(user);
 
-		System.out.println("Bienvenue "+ login + ". Votre compte a bien été créé.");
+		System.out.println("Bienvenue "+ login + ". Votre compte a bien ï¿½tï¿½ crï¿½ï¿½.");
 
 		menuPrincipal();		
 	}
