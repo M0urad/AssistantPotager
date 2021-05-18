@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import metier.Compte;
+import plante.MaPlante;
 import util.Context;
 
 public class DAOCompte implements IDAO<Compte, Integer> {
@@ -80,6 +81,20 @@ public class DAOCompte implements IDAO<Compte, Integer> {
 		em.getTransaction().commit();
 
 		em.close();
+	}
+
+
+	@Override
+	public List<MaPlante> findAllByUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<MaPlante> findAllSpeciesByUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

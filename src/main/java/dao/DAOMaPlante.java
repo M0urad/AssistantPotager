@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import metier.Compte;
 import plante.MaPlante;
 import util.Context;
 
@@ -33,6 +34,24 @@ public class DAOMaPlante implements IDAO<MaPlante, Integer> {
 	public List<MaPlante> findAll() {
 		EntityManager em = Context.get_instance().getEmf().createEntityManager();
 		Query myQuery = em.createQuery("SELECT m from MaPlante m",MaPlante.class);
+		List<MaPlante> plantes=myQuery.getResultList();
+		em.close();
+		return plantes;
+	}
+	
+	@Override
+	public List<MaPlante> findAllByUser(int id) {
+		EntityManager em = Context.get_instance().getEmf().createEntityManager();
+		Query myQuery = em.createQuery("SELECT m from MaPlante m where compte_id ="+id ,MaPlante.class);
+		List<MaPlante> plantes=myQuery.getResultList();
+		em.close();
+		return plantes;
+	}
+	
+	@Override
+	public List<MaPlante> findAllSpeciesByUser(int id) {
+		EntityManager em = Context.get_instance().getEmf().createEntityManager();
+		Query myQuery = em.createQuery("SELECT distinct plante_id from MaPlante where compte_id ="+id ,MaPlante.class);
 		List<MaPlante> plantes=myQuery.getResultList();
 		em.close();
 		return plantes;
