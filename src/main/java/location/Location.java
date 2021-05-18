@@ -8,6 +8,9 @@ import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
+import app.App;
+import metier.Compte;
+
 public class Location {
 	
 	static double change(double value, int decimalpoint)
@@ -21,15 +24,14 @@ public class Location {
 		return value;
 	}
 
-	public static double[] Url() {
+	public static double[] Url(Compte compte) {
 
-		String ville= "Paris";
-		String cp="78000";
-		String pays="FR";
+		String ville= compte.getVille();
+		String cp=compte.getCP();
+		String pays=compte.getCodePays();
+		
 		
 		double[] location= {0,0};
-		double lng;
-		double lat;
 
 		JAXBContext jaxbContext;
 		try
@@ -46,8 +48,8 @@ public class Location {
 
 			Geonames geonames = (Geonames) jaxbUnmarshaller.unmarshal(read);
 
-			lng=geonames.address.lng;
-			lat=geonames.address.lat;
+			double lng=geonames.address.lng;
+			double lat=geonames.address.lat;
 
 			lng=change(lng, 2);
 			lat=change(lat, 2);

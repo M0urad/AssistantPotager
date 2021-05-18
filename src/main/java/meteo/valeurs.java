@@ -12,6 +12,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
 import location.Location;
+import metier.Compte;
 
 public class valeurs {
 	
@@ -38,7 +39,7 @@ public class valeurs {
 	    return sb.toString();
 	}
 	
-	public static void main(String[] args) {
+	public static void main(Compte compte) {
 		
 		//File file = new File("Previsions.xml");
 		
@@ -46,7 +47,7 @@ public class valeurs {
 		try
 		{	
 			//URL url = new URL("https://www.infoclimat.fr/public-api/gfs/xml?_ll=47.79,3.94&_auth=BR9RRgZ4ASNVeAM0D3kHLlM7BjNaLFdwVioKaQtuVyoJYgBhAWFQNgRqVCkCLQA2BSgGZQgzATEBalEpXy1SMwVvUT0GbQFmVToDZg8gByxTfQZnWnpXcFY9Cm8LeFcyCW4AegFjUDMEaVQoAjoANgUpBnkINgE%2FAWBRNl80UjcFYFEyBmQBYVUlA34POQczU2kGb1pjV2ZWMAplC2ZXYAliADABY1A0BHVUNwIyADIFNwZmCD8BOQFmUSlfLVJIBRVRKAYlASFVbwMnDyIHZlM%2BBjI%3D&_c=084159b6124d9f9e962e02ed071b21a9");
-			URL url = new URL("https://www.infoclimat.fr/public-api/gfs/xml?_ll="+Location.Url()[1]+","+Location.Url()[0]+"&_auth=BR9RRgZ4ASNVeAM0D3kHLlM7BjNaLFdwVioKaQtuVyoJYgBhAWFQNgRqVCkCLQA2BSgGZQgzATEBalEpXy1SMwVvUT0GbQFmVToDZg8gByxTfQZnWnpXcFY9Cm8LeFcyCW4AegFjUDMEaVQoAjoANgUpBnkINgE%2FAWBRNl80UjcFYFEyBmQBYVUlA34POQczU2kGb1pjV2ZWMAplC2ZXYAliADABY1A0BHVUNwIyADIFNwZmCD8BOQFmUSlfLVJIBRVRKAYlASFVbwMnDyIHZlM%2BBjI%3D&_c=084159b6124d9f9e962e02ed071b21a9");
+			URL url = new URL("https://www.infoclimat.fr/public-api/gfs/xml?_ll="+Location.Url(compte)[1]+","+Location.Url(compte)[0]+"&_auth=BR9RRgZ4ASNVeAM0D3kHLlM7BjNaLFdwVioKaQtuVyoJYgBhAWFQNgRqVCkCLQA2BSgGZQgzATEBalEpXy1SMwVvUT0GbQFmVToDZg8gByxTfQZnWnpXcFY9Cm8LeFcyCW4AegFjUDMEaVQoAjoANgUpBnkINgE%2FAWBRNl80UjcFYFEyBmQBYVUlA34POQczU2kGb1pjV2ZWMAplC2ZXYAliADABY1A0BHVUNwIyADIFNwZmCD8BOQFmUSlfLVJIBRVRKAYlASFVbwMnDyIHZlM%2BBjI%3D&_c=084159b6124d9f9e962e02ed071b21a9");
 		    
 			BufferedReader read = new BufferedReader(new InputStreamReader(url.openStream()));
 		    

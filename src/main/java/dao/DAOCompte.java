@@ -28,6 +28,13 @@ public class DAOCompte implements IDAO<Compte, Integer> {
 		em.close();
 		return compte;
 	}
+	
+//	public Compte findByLogin(String login) {
+//		EntityManager em = Context.get_instance().getEmf().createEntityManager();
+//		Compte compte = em.find(Compte.class ,);
+//		em.close();
+//		return compte;
+//	}
 
 	@Override
 	public List<Compte> findAll() {

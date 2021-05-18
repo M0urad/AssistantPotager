@@ -2,6 +2,7 @@ package plante;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +23,7 @@ public abstract class Plante
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
-
+	@Column(columnDefinition = "LONGTEXT")
 	protected String description;
 	protected String typeSol;
 	protected String type;
@@ -30,7 +31,6 @@ public abstract class Plante
 	protected double irrigation;
 	protected double hauteur;
 	protected double priseAuSol;
-	protected LocalDate dateGermination;
 	
 	@OneToMany (mappedBy = "plante")
 	private List<MaPlante> mesPlante;
@@ -157,19 +157,12 @@ public abstract class Plante
 		this.priseAuSol = priseAuSol;
 	}
 
-	public LocalDate getDateGermination() {
-		return dateGermination;
-	}
-
-	public void setDateGermination(LocalDate dateGermination) {
-		this.dateGermination = dateGermination;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Plante [description=" + description + ", typeSol=" + typeSol + ", type=" + type
 				+ ", dureeGermination=" + dureeGermination + ", irrigation=" + irrigation + ", hauteur=" + hauteur
-				+ ", priseAuSol=" + priseAuSol + ", dateGermination=" + dateGermination + "]";
+				+ ", priseAuSol=" + priseAuSol + "]";
 	}
 
 }
