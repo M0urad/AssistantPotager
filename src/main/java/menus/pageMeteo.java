@@ -41,6 +41,18 @@ public class pageMeteo {
 	
 	valeurs.main(App.compte);
 
+	JButton btnNewButton_3 = new JButton("");
+	btnNewButton_3.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			
+			pageParametres.genererPageParametres();
+		}
+	});
+	btnNewButton_3.setOpaque(false);
+	btnNewButton_3.setBounds(365, 11, 50, 49);
+	btnNewButton_3.setIcon(new ImageIcon(pageMeteo.class.getResource("/images/rouage40x40.png")));
+	jf.getContentPane().add(btnNewButton_3);
+	
 	
 	JPanel weathereport = new JPanel();
 	weathereport.setBackground(new Color(173, 216, 230));

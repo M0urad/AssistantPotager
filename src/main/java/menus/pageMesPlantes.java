@@ -38,6 +38,18 @@ public class pageMesPlantes {
 		jf = new JFrame("Mes Plantes avec Thousand Sunny's Little Garden");
 		jf.getContentPane().setLayout(null);
 		
+		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				pageParametres.genererPageParametres();
+			}
+		});
+		btnNewButton_3.setOpaque(false);
+		btnNewButton_3.setBounds(365, 11, 50, 49);
+		btnNewButton_3.setIcon(new ImageIcon(pageAjouterPlante.class.getResource("/images/rouage40x40.png")));
+		jf.getContentPane().add(btnNewButton_3);
+		
 		JLabel lblNewLabel = new JLabel("MES PLANTES");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Goudy Old Style", Font.BOLD, 30));

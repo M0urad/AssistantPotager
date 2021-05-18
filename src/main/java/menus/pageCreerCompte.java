@@ -66,6 +66,19 @@ public class pageCreerCompte{
 				
 			}
 		});
+		
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jf.setVisible(false);
+				pageSeConnecter.seConnecter(App.comptes);
+			}
+		});
+		btnNewButton_1.setOpaque(false);
+		btnNewButton_1.setBounds(0, 11, 89, 23);
+		jf.getContentPane().add(btnNewButton_1);
+		
+
 		btnNewButton.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnNewButton.setIconTextGap(3);
 		btnNewButton.setForeground(new Color(47, 79, 79));
@@ -159,6 +172,7 @@ public class pageCreerCompte{
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(76, 31, 285, 52);
 		jf.getContentPane().add(lblNewLabel);
+
 		
 		JLabel lblImages = new JLabel("");
 		lblImages.setHorizontalAlignment(SwingConstants.CENTER);
@@ -167,7 +181,6 @@ public class pageCreerCompte{
 		lblImages.setIcon(new ImageIcon(pageCreerCompte.class.getResource("/images/TSLG700x450.jpg")));
 		lblImages.setBounds(0, 0, 436, 664);
 		jf.getContentPane().add(lblImages);
-		
 		
 		jf.setVisible(true);
 	

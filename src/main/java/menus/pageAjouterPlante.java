@@ -76,16 +76,33 @@ public class pageAjouterPlante {
 
 			}
 		});
-
-		JButton btnNewButton_1 = new JButton("Retour");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		
+		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jf.setVisible(false);
-				pageMesPlantes.genererPageMesPlantes();
+				
+				pageParametres.genererPageParametres();
 			}
 		});
-		btnNewButton_1.setBounds(0, 10, 85, 21);
-		jf.getContentPane().add(btnNewButton_1);
+		btnNewButton_3.setOpaque(false);
+		btnNewButton_3.setBounds(365, 11, 50, 49);
+		btnNewButton_3.setIcon(new ImageIcon(pageAjouterPlante.class.getResource("/images/rouage40x40.png")));
+		jf.getContentPane().add(btnNewButton_3);
+		
+				JButton btnNewButton_1 = new JButton("");
+				btnNewButton_1.setOpaque(false);
+				btnNewButton_1.setBorderPainted(false);
+				btnNewButton_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						jf.setVisible(false);
+						pageMesPlantes.genererPageMesPlantes();
+					}
+				});
+				btnNewButton_1.setBounds(20, 10, 45, 40);
+				jf.getContentPane().add(btnNewButton_1);
+				btnNewButton_1.setIcon(new ImageIcon(pageAjouterPlante.class.getResource("/images/retour40x40.png")));
+
+
 		btnNewButton.setFont(new Font("Goudy Old Style", Font.BOLD, 30));
 		btnNewButton.setForeground(new Color(47, 79, 79));
 		btnNewButton.setBounds(20, 565, 400, 40);
@@ -424,6 +441,7 @@ public class pageAjouterPlante {
 		lblImages.setIcon(new ImageIcon(pageAjouterPlante.class.getResource("/images/MesPlantes450x700.png")));
 		lblImages.setBounds(0, 0, 436, 664);
 		jf.getContentPane().add(lblImages);
+
 
 
 		jf.setVisible(true);
